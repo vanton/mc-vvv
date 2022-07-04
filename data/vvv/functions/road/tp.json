@@ -1,0 +1,17 @@
+{
+    NoGravity: 1b,
+    Attributes: [
+        {
+            Base: 0.699999988079071d,
+            Name: "minecraft:generic.movement_speed"
+        }
+    ],
+    Tags: [
+        "tp"
+    ],
+    Small: 0b,
+    Rotation: [
+        0.0f,
+        0.0f
+    ]
+}
