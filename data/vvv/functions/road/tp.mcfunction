@@ -15,7 +15,8 @@ execute as @e[type=armor_stand,tag=build] at @s run tp @e[type=armor_stand,dista
 # 需要设定边界，否则会出现一些奇怪的问题
 # 这里设置 錾制深板岩 为最终边界，并限制距离不大于30
 # 判断 tag=tp 位置是否是 錾制深板岩 chiseled_deepslate, 是则进行清理, 不是则继续填充并向后传送
-execute as @e[type=armor_stand,tag=tp] at @s if block ^ ^ ^-1 chiseled_deepslate run function vvv:road/clear
+# 錾制深板岩 为填充位置后一格，即 錾制深板岩 前方需要自行填充一排方块
+execute as @e[type=armor_stand,tag=tp] at @s if block ^ ^ ^-2 chiseled_deepslate run function vvv:road/clear
 # 限制最多到 30 格距离
 execute as @e[type=armor_stand,tag=tp] at @s if entity @e[type=armor_stand,distance=30..,tag=build] run function vvv:road/clear
 execute as @e[type=armor_stand,tag=tp] at @s run tp ^ ^ ^-1
