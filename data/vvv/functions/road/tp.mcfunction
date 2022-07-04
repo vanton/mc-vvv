@@ -12,9 +12,11 @@ execute at @e[type=armor_stand,tag=build] as @e[type=armor_stand,distance=..1,ta
 execute as @e[type=armor_stand,tag=build] at @s run tp @e[type=armor_stand,distance=..1,tag=tp] ^ ^ ^-2 facing entity @s
 execute as @e[type=armor_stand,tag=build] at @s run tp @e[type=armor_stand,distance=..2,tag=tp] ^ ^2 ^-2
 
-# 判断 tag=tp 位置是否是 smooth_quartz, 是则进行清理, 不是则继续填充并向后传送
+# 需要设定边界，否则会出现一些奇怪的问题
+# 这里设置 錾制深板岩 为最终边界，并限制距离不大于30
+# 判断 tag=tp 位置是否是 錾制深板岩 chiseled_deepslate, 是则进行清理, 不是则继续填充并向后传送
+execute as @e[type=armor_stand,tag=tp] at @s if block ^ ^ ^-1 chiseled_deepslate run function vvv:road/clear
 # 限制最多到 30 格距离
-execute as @e[type=armor_stand,tag=tp] at @s if block ^ ^ ^-1 smooth_quartz run function vvv:road/clear
 execute as @e[type=armor_stand,tag=tp] at @s if entity @e[type=armor_stand,distance=30..,tag=build] run function vvv:road/clear
 execute as @e[type=armor_stand,tag=tp] at @s run tp ^ ^ ^-1
 # execute at @e[type=armor_stand,tag=tp] run fill ^-2 ^ ^ ^2 ^ ^ black_stained_glass
