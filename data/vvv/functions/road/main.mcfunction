@@ -1,3 +1,16 @@
+# 别名
+#alias entity BUILD @e[type=armor_stand,tag=build]
+#alias entity BUILT @e[type=armor_stand,tag=built]
+#alias entity TP @e[type=armor_stand,tag=tp]
+
+#alias entity DEMOLISH @e[type=armor_stand,tag=demolish]
+#alias entity DEMOLISHED @e[type=armor_stand,tag=demolished]
+#alias entity TPDE @e[type=armor_stand,tag=tpde]
+
+#alias entity ARMOR_5 @e[type=armor_stand,distance=..5]
+#alias entity P_10 @p[distance=..10]
+################################################################################
+
 # 武器架正上方 2格 后方 2格 开始向远处生成 5格 宽的桥
 # 1. 在需要造桥的位置前方地面下3格放置武器架，武器架背对的方向为造桥位置
 # 2. 在武器架附近的位置放置命令方块，每个方块上方放置按钮用于启动，这2个方块仅用于启动，位置不重要
