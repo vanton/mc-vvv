@@ -13,3 +13,4 @@ execute if score $random gtree matches 3 run tp @s ~ ~2 ~1
 execute as @e[tag=trunk,scores={level=10}] at @s run function vvv:gtree/newbranch
 execute as @e[tag=trunk,scores={level=15}] at @s run function vvv:gtree/newbranch1
 execute as @e[tag=trunk,scores={level=20}] at @s run function vvv:gtree/newbranch1
+execute as @e[tag=trunk,scores={level=25}] at @s run function vvv:gtree/newbranch1
