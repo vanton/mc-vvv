@@ -1,7 +1,7 @@
 # 主干随机生成
 clone 50 0 50 54 4 54 ~ ~-1 ~ masked
 
-# 随机值
+# 随机位置
 function vvv:gtree/random
 
 execute if score $random gtree matches 0 run tp @s ~-1 ~2 ~
