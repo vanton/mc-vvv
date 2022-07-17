@@ -10,12 +10,18 @@ execute as @e[type=armor_stand,name="gtree"] at @s run summon armor_stand ~ ~ ~ 
 kill @e[type=armor_stand,name="gtree"]
 scoreboard players add @e[type=armor_stand,tag=trunk] level 1
 scoreboard players add @e[type=armor_stand,tag=branch] level 1
+scoreboard players add @e[type=armor_stand,tag=fork] level 1
 
 # spreadplayers x y 分散间隔 分散范围 考虑队伍 传送目标实体
 # spreadplayers ~6 ~6 0 2 true @e[type=minecraft:armor_stand,name="trunk",limit=1]
 
 # 树叶
 
+
+# 分叉
+execute as @e[tag=fork,scores={level=1}] at @s run tp @s ~ ~ ~ facing entity @e[tag=branch,sort=nearest,limit=1]
+execute as @e[tag=fork,scores={level=1}] run scoreboard players set @s level 13
+execute as @e[tag=fork,scores={level=..25},limit=1] at @s run function vvv:gtree/fork
 
 # 分枝
 execute as @e[tag=branch,scores={level=1}] at @s run tp @s ~ ~ ~ facing entity @e[tag=trunk,sort=nearest,limit=1]
