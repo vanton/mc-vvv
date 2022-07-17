@@ -16,7 +16,7 @@ scoreboard players add @e[type=armor_stand,tag=fork] level 1
 # spreadplayers ~6 ~6 0 2 true @e[type=minecraft:armor_stand,name="trunk",limit=1]
 
 # 树叶
-execute as @e[tag=fork,scores={level=25}] at @s run clone 39 0 0 60 13 20 ^-6 ^-2 ^-6 masked
+execute as @e[tag=fork,scores={level=25}] at @s run clone 39 0 0 60 13 20 ^-6 ^-1 ^-6 masked
 
 # 分叉
 execute as @e[tag=fork,scores={level=1}] at @s run tp @s ~ ~ ~ facing entity @e[tag=branch,sort=nearest,limit=1]
