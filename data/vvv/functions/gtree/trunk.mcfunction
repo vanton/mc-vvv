@@ -8,3 +8,8 @@ execute if score $random gtree matches 0 run tp @s ~-1 ~2 ~
 execute if score $random gtree matches 1 run tp @s ~ ~2 ~-1
 execute if score $random gtree matches 2 run tp @s ~1 ~2 ~
 execute if score $random gtree matches 3 run tp @s ~ ~2 ~1
+
+# 创建分支
+execute as @e[tag=trunk,scores={level=10}] at @s run function vvv:gtree/newbranch
+execute as @e[tag=trunk,scores={level=15}] at @s run function vvv:gtree/newbranch1
+execute as @e[tag=trunk,scores={level=20}] at @s run function vvv:gtree/newbranch1
