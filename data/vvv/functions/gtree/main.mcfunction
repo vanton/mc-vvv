@@ -16,23 +16,24 @@ scoreboard players add @e[type=armor_stand,tag=fork] level 1
 # spreadplayers ~6 ~6 0 2 true @e[type=minecraft:armor_stand,name="trunk",limit=1]
 
 # 树叶
-execute as @e[tag=fork,scores={level=25}] at @s run clone 39 0 0 60 13 20 ^-6 ^-1 ^-6 masked
+execute as @e[tag=fork,scores={level=25..}] at @s run function vvv:gtree/leaves
 
 # 分叉
 execute as @e[tag=fork,scores={level=1}] at @s run tp @s ~ ~ ~ facing entity @e[tag=branch,sort=nearest,limit=1]
-execute as @e[tag=fork,scores={level=1}] run scoreboard players set @s level 18
+execute as @e[tag=fork,scores={level=1}] run scoreboard players set @s level 15
 execute as @e[tag=fork,scores={level=..25},limit=1] at @s run function vvv:gtree/fork
 
 # 分枝
 execute as @e[tag=branch,scores={level=1}] at @s run tp @s ~ ~ ~ facing entity @e[tag=trunk,sort=nearest,limit=1]
-execute as @e[tag=branch,scores={level=1}] run scoreboard players set @s level 3
-execute as @e[tag=branch,scores={level=..25},limit=1] at @s run function vvv:gtree/branch
+execute as @e[tag=branch,scores={level=1}] run scoreboard players set @s level 5
+execute as @e[tag=branch,scores={level=..25}] at @s run function vvv:gtree/branch
 
 # 主干
-execute as @e[tag=trunk,scores={level=..25},limit=1] at @s run function vvv:gtree/trunk
+execute as @e[tag=trunk,scores={level=..25}] at @s run function vvv:gtree/trunk
+execute as @e[tag=trunk,scores={level=25..}] at @s run function vvv:gtree/leaves
 
 # 清除掉落物
-execute as @e[type=armor_stand,tag=trunk] at @s run kill @e[type=item,distance=..100]
+execute as @p[distance=..50] at @s run kill @e[type=item,distance=..100]
 
 # 删除所有到达顶部的假人
 kill @e[type=armor_stand,scores={level=25..}]

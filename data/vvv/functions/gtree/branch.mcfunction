@@ -3,7 +3,9 @@
 function vvv:gtree/random
 scoreboard players operation @s level += $random gtree
 
-clone 60 0 50 62 2 52 ~-1 ~-1 ~-1 masked
+# clone 60 0 50 62 2 52 ~-1 ~-1 ~-1 masked
+setblock ~ ~-1 ~ minecraft:structure_block[mode=load]{integrity:1f,mode:"LOAD",name:"vvv:gtree/branch",posX:-1,posY:-1,posZ:-1,showboundingbox:0b}
+setblock ~ ~ ~ redstone_block
 
 # 随机位置
 function vvv:gtree/random

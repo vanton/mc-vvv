@@ -1,5 +1,7 @@
 # 主干随机生成
-clone 50 0 50 54 4 54 ~ ~-1 ~ masked
+# clone 50 0 50 54 4 54 ~ ~-1 ~ masked
+setblock ~ ~-1 ~ minecraft:structure_block[mode=load]{integrity:1f,mode:"LOAD",name:"vvv:gtree/trunk",posX:-2,posY:-2,posZ:-2,showboundingbox:0b}
+setblock ~ ~ ~ redstone_block
 
 # 随机位置
 function vvv:gtree/random
